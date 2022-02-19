@@ -1,7 +1,7 @@
 # as
 
 Cau 4: 
-
+ông copy từ đây nha:
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,7 +9,6 @@ Cau 4:
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,7 +51,24 @@ Cau 4:
             android:layout_gravity="center"
             android:text="login" />
     </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+Cau 3: 
+
+class PhanSo(private var tuso: Float,private var mauso: Float) {
+    init {
+        if (mauso == 0f) {
+            tuso = 1f
+            mauso = 1f
+        }
+    }
+    fun printl() {
+        println("Phan so la $tuso/$mauso")
+    }
+    fun add(phanSo: PhanSo) : PhanSo{
+        val tuso = this.tuso* phanSo.mauso + this.mauso +phanSo.tuso
+        val mauso = this.mauso * phanSo.mauso
+        return PhanSo(tuso, mauso)
+    }
+}
