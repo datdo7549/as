@@ -72,3 +72,34 @@ class PhanSo(private var tuso: Float,private var mauso: Float) {
         return PhanSo(tuso, mauso)
     }
 }
+
+
+
+private void saveText(String text, String name) throws IOException {
+        OutputStream fos = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, name + ".txt");
+            contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "text/plain");
+            contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS + "/text/");
+            Uri uri = getContentResolver().insert(MediaStore.Files.getContentUri("external"), contentValues);
+            fos = getContentResolver().openOutputStream(uri);
+            fos.write(text.getBytes());
+        } else {
+            if (checkPermission()) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                    String textDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString();
+                    File textFile = new File(textDir, name+ ".txt");
+                    fos = new FileOutputStream(textFile);
+                    final PrintStream printStream = new PrintStream(fos);
+                    printStream.print(text);
+                    printStream.close();
+                }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},111);
+                }
+            }
+            fos.close();
+        }
+    }
