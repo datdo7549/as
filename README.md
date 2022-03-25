@@ -103,3 +103,20 @@ private void saveText(String text, String name) throws IOException {
             fos.close();
         }
     }
+    
+    
+    https://flexiple.com/android/android-workmanager-tutorial-getting-started/
+    
+    https://stackoverflow.com/questions/50279364/android-workmanager-vs-jobscheduler
+    
+    https://medium.com/androiddevelopers/introducing-workmanager-2083bcfc4712
+    
+    https://blog.mindorks.com/integrating-work-manager-in-android
+    
+    https://viblo.asia/p/android-jetpack-series-chapter-1-workmanager-6J3ZgmqL5mB
+    
+    https://viblo.asia/p/tim-hieu-ve-workmanager-trong-android-jetpack-Az45bWbQKxY
+    
+    https://medium.com/android-news/how-scheduling-work-with-new-android-jetpack-component-workmanager-852163f4825b
+    
+    https://www.simplifiedcoding.net/android-workmanager-tutorial/
