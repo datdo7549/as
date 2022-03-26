@@ -120,3 +120,5 @@ private void saveText(String text, String name) throws IOException {
     https://medium.com/android-news/how-scheduling-work-with-new-android-jetpack-component-workmanager-852163f4825b
     
     https://www.simplifiedcoding.net/android-workmanager-tutorial/
+    
+    https://www.raywenderlich.com/20689637-scheduling-tasks-with-android-workmanager#toc-anchor-020
