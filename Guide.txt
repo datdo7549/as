@@ -1,4 +1,7 @@
 *** Install cordova: npm install -g cordova 
+
+cordova platform add android 
+
 ** Setup environment
 
 1. Add plugin camera: cordova plugin add cordova-plugin-camera
